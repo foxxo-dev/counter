@@ -28,6 +28,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        font-size: 10rem;
       }
       .container_number::after {
         content: '';
@@ -99,6 +100,44 @@
       #_num4 * {
         transition: 0.15s ease-in-out;
       }
+      .title {
+        opacity: 0.5;
+        position: absolute;
+        top: -7rem;
+        font-size: 5rem;
+      }
+      .title::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          rgba(0, 0, 0, 0) 0%,
+          #00000020 25%,
+          #000000 100%
+        );
+        z-index: 20000;
+      }
+      .title::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          0deg,
+          #000 0px,
+          #000 7px,
+          rgba(0, 0, 0, 0) 7px,
+          rgba(0, 0, 0, 0) 14px
+        );
+        background-size: 100% 14px;
+        background-repeat: repeat;
+        z-index: 20000;
+      }
     </style>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap');
@@ -109,6 +148,7 @@
   </head>
   <body>
     <div class="container_number">
+      <span class="title">* Counter Test *</span>
       <div class="number" id="_num1">
         <span class="number_inner">0</span>
         <span class="number_inner">1</span><span class="number_inner">2</span
@@ -117,6 +157,7 @@
         ><span class="number_inner">7</span><span class="number_inner">8</span
         ><span class="number_inner">9</span>
       </div>
+
       <div class="number" id="_num2">
         <span class="number_inner">0</span>
         <span class="number_inner">1</span><span class="number_inner">2</span
