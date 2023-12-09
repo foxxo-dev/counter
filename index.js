@@ -33,8 +33,8 @@ setInterval(() => {
   });
 }, 1000);
 
-console.log(num1_children);
-
-num1_children.forEach((child, index) => {
-  child.style.transform = `translateY(-${num1Target}2.25rem`;
-});
+setInterval(() => {
+  Array.from(num1.children).forEach((child, index) => {
+    child.style.transform = `translateY(-${num2Target}2.25rem`;
+  });
+}, 1000);
