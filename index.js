@@ -35,6 +35,6 @@ setInterval(() => {
 
 setInterval(() => {
   Array.from(num1.children).forEach((child, index) => {
-    child.style.transform = `translateY(-${num2Target}2.25rem`;
+    child.style.transform = `translateY(-${num1Target}2.25rem`;
   });
 }, 1000);
