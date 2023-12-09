@@ -10,7 +10,7 @@
         width: 100vw;
         height: 100vh;
         height: 100dvh;
-        color: white;
+        color: rgb(82, 250, 82);
         background: #212225;
         padding: 0;
         margin: 0;
@@ -23,30 +23,56 @@
           Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
           sans-serif;
       }
-      h1 {
-        font-size: 5rem;
-      }
       .container_number {
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+      }
+      .container_number::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(#21222500 0%, #21222520 25%, #212225 100%);
+        z-index: 20000;
       }
       .number {
         font-size: 10rem;
         display: flex;
-        /* justify-content: center;
-        align-items: center; */
         flex-direction: column;
         width: min-content;
         height: 7rem;
         padding: 1rem;
         overflow: hidden;
-        background: #212225;
         border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         transition: 0.5s;
         line-height: 1;
+        position: relative; /* Add this line */
+        z-index: 1; /* Add this line */
       }
+
+      .number::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          0deg,
+          #212225 0px,
+          #212225 7px,
+          rgba(0, 0, 0, 0) 7px,
+          rgba(0, 0, 0, 0) 14px
+        );
+        background-size: 100% 14px;
+        background-repeat: repeat;
+        /* z-index: -1; Set a lower z-index for the background */
+      }
+
       .number * {
         transform: translateY(-02.25rem);
       }
@@ -68,7 +94,6 @@
     </style>
   </head>
   <body>
-    <h1>Counter Test</h1>
     <div class="container_number">
       <div class="number" id="_num1">
         <span class="number_inner">0</span>
